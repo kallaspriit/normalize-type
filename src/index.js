@@ -1,4 +1,19 @@
-export default function(arg) {
+export default function normalizeType(arg) {
+
+	// handle arrays
+	if (Array.isArray(arg)) {
+		return arg.map((item) => normalizeType(item));
+	}
+
+	// handle objects but not dates etc
+	if (typeof arg === 'object' && arg !== null && arg.constructor === Object) {
+		return Object.keys(arg).reduce((obj, key) => {
+			obj[key] = normalizeType(arg[key]);
+
+			return obj;
+		}, {});
+	}
+
 	// do not modify non-strings
 	if (typeof arg !== 'string') {
 		return arg;
@@ -30,6 +45,8 @@ export default function(arg) {
 	if (!isNaN(arg)) {
 		return Number(arg);
 	}
+
+	// TODO handle dates? might be too expensive
 
 	return arg;
 }

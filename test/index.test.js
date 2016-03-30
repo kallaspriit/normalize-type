@@ -20,11 +20,13 @@ describe('normalize-type', () => {
 			undefined,
 			null,
 			{},
-			[]
+			[],
+			{ a: 1 },
+			[1, 2, 3]
 		];
 
 		nonStringValues.forEach((value) => {
-			expect(normalizeType(value)).to.equal(value);
+			expect(normalizeType(value)).to.deep.equal(value);
 		});
 	});
 
@@ -79,5 +81,33 @@ describe('normalize-type', () => {
 			expect(normalizeType(value)).to.equal(value);
 		});
 	});
-	
+
+	it('should convert arrays of values', () => {
+		normalizeType([]).should.deep.equal([]);
+		normalizeType(['123']).should.deep.equal([123]);
+		normalizeType(['0']).should.deep.equal([0]);
+		normalizeType(['1']).should.deep.equal([1]);
+		normalizeType(['test', '1', '2.3']).should.deep.equal(['test', 1, 2.3]);
+	});
+
+	it('should convert nested arrays of values', () => {
+		normalizeType([[]]).should.deep.equal([[]]);
+		normalizeType([['123']]).should.deep.equal([[123]]);
+		normalizeType([['0']]).should.deep.equal([[0]]);
+		normalizeType([['1']]).should.deep.equal([[1]]);
+		normalizeType([['test', '1', '2.3']]).should.deep.equal([['test', 1, 2.3]]);
+		normalizeType([['123', '234'], ['5.5']]).should.deep.equal([[123, 234], [5.5]]);
+	});
+
+	it('should convert object maps', () => {
+		normalizeType({}).should.deep.equal({});
+		normalizeType({ a: 'test' }).should.deep.equal({ a: 'test' });
+		normalizeType({ a: '123' }).should.deep.equal({ a: 123 });
+	});
+
+	it('should convert nested object maps', () => {
+		normalizeType({ a: { b: 'test' } }).should.deep.equal({ a: { b: 'test' } });
+		normalizeType({ a: { b: '123' } }).should.deep.equal({ a: { b: 123 } });
+	});
+
 });
