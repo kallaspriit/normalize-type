@@ -8,7 +8,7 @@ describe('normalize-type', () => {
 	});
 
 	it('should convert numeric integer strings to numbers', () => {
-		expect(normalizeType(3, 1)).to.equal(4);
+		expect(normalizeType(3, 1, 2)).to.equal(6);
 	});
 
 });
