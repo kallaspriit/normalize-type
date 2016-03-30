@@ -6,9 +6,12 @@
 [![MIT License](https://img.shields.io/npm/l/normalize-type.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
 **Normalizes string JavaScript values to have real type.**
-- a string "123" becomes number *123*
-- "true" becomes boolean *true*
-- works recursively on objects and as well so { a: ['123'] } becomes { a: [123] } etc.
+- a string `"123"` becomes number `123`.
+- `"true"` becomes boolean `true`.
+- works recursively on objects and as well so `{ a: ['123'] }` becomes `{ a: [123] }` etc.
+
+Mainly useful for parsing query parameters etc where you always get string values for everything but you'd like to use
+the values with their real types or validate them etc.
 
 ## Installation
 
@@ -21,7 +24,7 @@ npm install normalize-type
 ## Example
 
 ```javascript
-import normalizeType from './src';
+import normalizeType from 'normalize-type';
 
 const parameters = {
 	id: '2',
@@ -35,7 +38,7 @@ console.log(
 	normalizeType(parameters)
 );
 ```
-running the example and result
+result of running the example
 ```
 babel-node example
 {
@@ -50,7 +53,7 @@ babel-node example
 }
 ```
 
-## Features verified by 100% test coverage tests
+## Features verified by 100% test coverage
 - should leave non-strings to be strings
 - should not modify non-strings
 - should leave strings to be strings
