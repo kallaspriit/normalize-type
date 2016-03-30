@@ -22,3 +22,9 @@ npm install normalize-type
 var normalizeType = require('normalize-type');
 // TODO
 ```
+
+
+## Commiting changes
+- `git add -A` to stage all changed files
+- `npm run commit` to start the interactive commit procedure
+- `git push` to push the changes
