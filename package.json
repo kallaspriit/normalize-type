@@ -35,7 +35,6 @@
   },
   "homepage": "https://github.com/kallaspriit/normalize-type#readme",
   "dependencies": {
-    "ghooks": "^1.1.1"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",
