@@ -110,4 +110,20 @@ describe('normalize-type', () => {
 		normalizeType({ a: { b: '123' } }).should.deep.equal({ a: { b: 123 } });
 	});
 
+	it('should handle mixed content', () => {
+		normalizeType({
+			id: '2',
+			name: 'Jack Daniels',
+			age: '26',
+			height: '1.84',
+			accessLevels: ['1', '3']
+		}).should.deep.equal({
+			id: 2,
+			name: 'Jack Daniels',
+			age: 26,
+			height: 1.84,
+			accessLevels: [1, 3]
+		});
+	});
+
 });

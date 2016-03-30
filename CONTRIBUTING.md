@@ -1,6 +1,6 @@
 # Contributing
 
-**To contribute to the project, please follow these steps**
+**To contribute to the project, please follow the following steps**
 
 1. Fork the repo
 2. Make a branch for your change

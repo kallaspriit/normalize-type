@@ -5,8 +5,9 @@
   "scripts": {
     "prebuild": "rm -rf dist && mkdir dist",
     "build": "babel src --out-dir dist",
+    "precommit": "npm run build",
     "commit": "git-cz",
-    "check-coverage": "istanbul check-coverage --statements 70 --branches 70 --functions 70 --lines 70",
+    "check-coverage": "babel-node ./node_modules/istanbul/lib/cli check-coverage --statements 70 --branches 70 --functions 70 --lines 70",
     "report-coverage": "cat ./coverage/lcov.info | codecov",
     "start": "npm run test",
     "test": "mocha test/**/*.test.js -w --compilers js:babel-core/register",
