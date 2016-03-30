@@ -1,0 +1,17 @@
+sudo: false
+language: node_js
+cache:
+  directories:
+    - node_modules
+branches:
+  only:
+    - master
+before_script:
+  - npm prune
+script:
+  - npm run test:single
+  - npm run check-coverage
+  - npm run build
+after_success:
+  - npm run report-coverage
+  - npm run semantic-release
