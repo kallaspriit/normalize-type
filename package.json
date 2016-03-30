@@ -1,6 +1,6 @@
 {
 	"name": "normalize-type",
-	"version": "0.0.0-semantically-released",
+	"version": "0.1.0",
 	"description": "Normalizes string JavaScript values to have real type (so \"123\" becomes number 123 etc).",
 	"main": "dist/index.js",
 	"scripts": {
