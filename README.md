@@ -1,9 +1,8 @@
 # Normalize type
-[![travis build](https://img.shields.io/travis/kallaspriit/normalize-type.svg?style=flat-square)](https://travis-ci.org/kallaspriit/normalize-type)
-[![Coverage Status](https://coveralls.io/repos/github/kallaspriit/normalize-type/badge.svg?branch=master)](https://coveralls.io/github/kallaspriit/normalize-type?branch=master)
-[![downloads](https://img.shields.io/npm/dm/normalize-type.svg?style=flat-square)](http://npm-stat.com/charts.html?package=normalize-type&from=2015-08-01)
-[![version](https://img.shields.io/npm/v/normalize-type.svg?style=flat-square)](http://npm.im/normalize-type)
-[![MIT License](https://img.shields.io/npm/l/normalize-type.svg?style=flat-square)](http://opensource.org/licenses/MIT)
+[![Coverage](https://img.shields.io/coveralls/kallaspriit/normalize-type.svg)]()
+[![Downloads](https://img.shields.io/npm/dm/normalize-type.svg)](http://npm-stat.com/charts.html?package=normalize-type&from=2015-08-01)
+[![Version](https://img.shields.io/npm/v/normalize-type.svg)](http://npm.im/normalize-type)
+[![License](https://img.shields.io/npm/l/normalize-type.svg)](http://opensource.org/licenses/MIT)
 
 **Normalizes string JavaScript values to have real type.**
 - a string `"123"` becomes number `123`.
