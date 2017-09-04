@@ -23,7 +23,7 @@ build:
   # http://devcenter.wercker.com/docs/steps/index.html
   steps:
     # A step that executes `npm install` command
-    - npm install -g yarn
+    - npm-install -g yarn
     # A step that executes `npm test` command
     - yarn build
     - yarn test
