@@ -1,6 +1,6 @@
 {
 	"name": "normalize-type",
-	"version": "1.3.2",
+	"version": "1.3.3",
 	"description": "Normalizes string JavaScript values to have real type (so \"123\" becomes number 123 etc).",
 	"main": "build/index.js",
 	"types": "build/index.d.ts",
