@@ -26,12 +26,12 @@ npm install normalize-type
 const normalizeType = require('./build/index').default;
 
 const parameters = {
-	id: '2',
-	name: 'Jack Daniels',
-	age: '26',
-	height: '1.84',
-	birthday: new Date(1849, 1, 15, 0, 0, 0, 0),
-	accessLevels: ['1', '3'],
+  id: '2',
+  name: 'Jack Daniels',
+  age: '26',
+  height: '1.84',
+  birthday: new Date(1849, 1, 15, 0, 0, 0, 0),
+  accessLevels: ['1', '3'],
 };
 
 console.log(normalizeType(parameters));
