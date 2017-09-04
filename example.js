@@ -12,7 +12,7 @@ const parameters = {
 console.log(normalizeType(parameters));
 
 /*
-> node example
+> npm run build && node example
 {
   id: 2,
   name: 'Jack Daniels',
