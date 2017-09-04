@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"target": "es2016",
+		"module": "commonjs",
+		"allowJs": false,
+		"outDir": "./build",
+		"removeComments": false,
+		"downlevelIteration": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"noImplicitThis": true,
+		"alwaysStrict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"moduleResolution": "node",
+		"baseUrl": "./",
+		"typeRoots": ["./node_modules/@types", "./typings"],
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"pretty": true,
+		"allowUnreachableCode": false,
+		"sourceMap": true,
+		"noEmitOnError": true,
+		"declaration": true
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "build"]
+}

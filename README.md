@@ -1,6 +1,6 @@
 # normalize-type
 [![travis build](https://img.shields.io/travis/kallaspriit/normalize-type.svg?style=flat-square)](https://travis-ci.org/kallaspriit/normalize-type)
-[![codecov coverage](https://img.shields.io/codecov/c/github/kallaspriit/normalize-type.svg?style=flat-square)](https://codecov.io/github/kallaspriit/normalize-type)
+[![Coverage Status](https://coveralls.io/repos/github/kallaspriit/normalize-type/badge.svg?branch=master)](https://coveralls.io/github/kallaspriit/normalize-type?branch=master)
 [![version](https://img.shields.io/npm/v/normalize-type.svg?style=flat-square)](http://npm.im/normalize-type)
 [![downloads](https://img.shields.io/npm/dm/normalize-type.svg?style=flat-square)](http://npm-stat.com/charts.html?package=normalize-type&from=2015-08-01)
 [![MIT License](https://img.shields.io/npm/l/normalize-type.svg?style=flat-square)](http://opensource.org/licenses/MIT)

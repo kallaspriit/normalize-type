@@ -1,20 +1,25 @@
-export default function normalizeType(arg) {
+interface IndexableObject {
+	[x: string]: any;
+}
 
+export function normalizeType(arg: any[]): any[];
+export function normalizeType(arg: any): any;
+export function normalizeType(arg: any): any {
 	// handle arrays
 	if (Array.isArray(arg)) {
-		return arg.map((item) => normalizeType(item));
+		return arg.map(item => normalizeType(item));
 	}
 
-	// handle objects but not dates etc
+	// handle ordinary objects (maps) but not dates etc
 	if (typeof arg === 'object' && arg !== null && arg.constructor === Object) {
-		return Object.keys(arg).reduce((obj, key) => {
+		return Object.keys(arg).reduce((obj: IndexableObject, key) => {
 			obj[key] = normalizeType(arg[key]);
 
 			return obj;
 		}, {});
 	}
 
-	// do not modify non-strings
+	// do not modify non-strings from this point on
 	if (typeof arg !== 'string') {
 		return arg;
 	}
@@ -25,9 +30,9 @@ export default function normalizeType(arg) {
 	}
 
 	// map of direct string conversions
-	const conversionMap = {
-		'true': true,
-		'false': false
+	const conversionMap: IndexableObject = {
+		true: true,
+		false: false,
 	};
 	const conversionValue = conversionMap[arg];
 
@@ -42,11 +47,12 @@ export default function normalizeType(arg) {
 	}
 
 	// handle numeric values
-	if (!isNaN(arg)) {
+	if (!isNaN(Number(arg))) {
 		return Number(arg);
 	}
 
-	// TODO handle dates? might be too expensive
-
+	// return the string as is
 	return arg;
 }
+
+export default normalizeType;
