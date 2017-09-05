@@ -4,6 +4,7 @@ interface IndexableObject {
 
 export function normalizeType(arg: any[]): any[];
 export function normalizeType(arg: any): any;
+export function normalizeType<T>(arg: any): T;
 export function normalizeType(arg: any): any {
 	// handle arrays
 	if (Array.isArray(arg)) {
