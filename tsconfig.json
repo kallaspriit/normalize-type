@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"target": "es2016",
+		"target": "es6",
 		"module": "commonjs",
 		"allowJs": false,
 		"outDir": "./build",
@@ -17,12 +17,14 @@
 		"moduleResolution": "node",
 		"baseUrl": "./",
 		"typeRoots": ["./node_modules/@types", "./typings"],
-		"allowSyntheticDefaultImports": true,
+		"allowSyntheticDefaultImports": false,
 		"strict": true,
 		"pretty": true,
 		"allowUnreachableCode": false,
 		"sourceMap": true,
 		"noEmitOnError": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
 		"declaration": true
 	},
 	"include": ["src/**/*"],
