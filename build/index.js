@@ -3,17 +3,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 function normalizeType(arg) {
     // handle arrays
     if (Array.isArray(arg)) {
-        return arg.map(item => normalizeType(item));
+        return arg.map(normalizeType);
     }
     // handle ordinary objects (maps) but not dates etc
-    if (typeof arg === 'object' && arg !== null && arg.constructor === Object) {
+    if (typeof arg === "object" && arg !== null && arg.constructor === Object) {
         return Object.keys(arg).reduce((obj, key) => {
             obj[key] = normalizeType(arg[key]);
             return obj;
         }, {});
     }
     // do not modify non-strings from this point on
-    if (typeof arg !== 'string') {
+    if (typeof arg !== "string") {
         return arg;
     }
     // handle special empty string case that can be seen as a number by isNaN
@@ -27,15 +27,15 @@ function normalizeType(arg) {
     };
     const conversionValue = conversionMap[arg];
     // return the conversion map value if matched
-    if (typeof conversionValue !== 'undefined') {
+    if (typeof conversionValue !== "undefined") {
         return conversionValue;
     }
     // handle undefined special case
-    if (arg === 'undefined') {
+    if (arg === "undefined") {
         return undefined;
     }
     // handle numeric values
-    if (!isNaN(Number(arg))) {
+    if (!isNaN(Number(arg)) && /^-?[0-9]{1,}(\.[0-9]+)?$/.test(arg)) {
         return Number(arg);
     }
     // return the string as is
