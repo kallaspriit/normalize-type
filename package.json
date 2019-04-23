@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/kallaspriit/normalize-type#readme",
   "dependencies": {
-    "coveralls": "^2.13.1",
+    "coveralls": "^3.0.3",
     "tslint-config-strict": "^1.3.1"
   },
   "devDependencies": {
