@@ -2,6 +2,8 @@
   "extends": ["tslint-config-strict", "tslint-config-prettier"],
   "rules": {
     "no-null-keyword": false,
-    "no-any": false
+    "no-any": false,
+    "no-default-import": false,
+    "no-magic-numbers": false
   }
 }

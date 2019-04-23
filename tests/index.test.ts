@@ -1,4 +1,5 @@
 import "ts-jest";
+
 import normalizeType from "../src/index";
 
 describe("normalize-type", () => {
